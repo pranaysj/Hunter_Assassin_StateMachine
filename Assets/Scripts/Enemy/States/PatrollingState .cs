@@ -1,35 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StatePattern.StateMachine;
+﻿using StatePattern.StateMachine;
+using System.Collections;
+using UnityEngine;
 
 namespace StatePattern.Enemy
 {
     public class PatrollingState : IState
     {
         public EnemyController Owner { get; set; }
-        public IStateMachine stateMachine;
+        private IStateMachine stateMachine;
+        private int currentPatrollingIndex = -1;
+        private Vector3 destination;
 
-        public PatrollingState(IStateMachine stateMachine)
-        {
-            this.stateMachine = stateMachine;
-        }
+        public PatrollingState(IStateMachine stateMachine) => this.stateMachine = stateMachine;
 
         public void OnStateEnter()
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnStateExit()
-        {
-            throw new NotImplementedException();
+            SetNextWaypointIndex();
+            destination = GetDestination();
+            MoveTowardsDestination();
         }
 
         public void Update()
         {
-            throw new NotImplementedException();
+            if (ReachedDestination())
+                stateMachine.ChangeState(States.IDLE);
         }
+
+        public void OnStateExit() { }
+
+        private void SetNextWaypointIndex()
+        {
+            if (currentPatrollingIndex == Owner.Data.PatrollingPoints.Count - 1)
+                currentPatrollingIndex = 0;
+            else
+                currentPatrollingIndex++;
+        }
+
+        private Vector3 GetDestination() => Owner.Data.PatrollingPoints[currentPatrollingIndex];
+
+        private void MoveTowardsDestination()
+        {
+            Owner.Agent.isStopped = false;
+            Owner.Agent.SetDestination(destination);
+        }
+
+        private bool ReachedDestination() => Owner.Agent.remainingDistance <= Owner.Agent.stoppingDistance;
+
     }
 }

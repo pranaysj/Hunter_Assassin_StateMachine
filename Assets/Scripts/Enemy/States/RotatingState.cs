@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using StatePattern.StateMachine;
+using UnityEngine;
 
 namespace StatePattern.Enemy
 {
