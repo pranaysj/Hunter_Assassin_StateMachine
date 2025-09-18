@@ -1,6 +1,7 @@
 ﻿using StatePattern.Enemy.Bullet;
 using StatePattern.Main;
 using StatePattern.Player;
+using StatePattern.StateMachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -78,6 +79,7 @@ namespace StatePattern.Enemy
         public virtual void PlayerExitedRange() { }
 
         public virtual void UpdateEnemy() { }
+
     }
 
     public enum EnemyState
