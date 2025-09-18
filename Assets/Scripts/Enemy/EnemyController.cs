@@ -1,7 +1,6 @@
 ﻿using StatePattern.Enemy.Bullet;
 using StatePattern.Main;
 using StatePattern.Player;
-using StatePattern.StateMachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -48,7 +47,7 @@ namespace StatePattern.Enemy
             Agent.speed = enemyScriptableObject.MovementSpeed;
         }
 
-        public virtual void Die() 
+        public virtual void Die()
         {
             GameService.Instance.EnemyService.EnemyDied(this);
             enemyView.Destroy();
@@ -62,10 +61,9 @@ namespace StatePattern.Enemy
 
         public void SetRotation(Quaternion desiredRotation) => enemyView.transform.rotation = desiredRotation;
 
-        public void ToggleEnemyColor(bool value)=>  enemyView.ToggleColor(value);
-        
+        public void ToggleEnemyColor(EnemyColorType colorToSet) => enemyView.ChangeColor(colorToSet);
 
-        public void Shoot()
+        public virtual void Shoot()
         {
             enemyView.PlayShootingEffect();
             GameService.Instance.SoundService.PlaySoundEffects(Sound.SoundType.ENEMY_SHOOT);
@@ -79,7 +77,6 @@ namespace StatePattern.Enemy
         public virtual void PlayerExitedRange() { }
 
         public virtual void UpdateEnemy() { }
-
     }
 
     public enum EnemyState
