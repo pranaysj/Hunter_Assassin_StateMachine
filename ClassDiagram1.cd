@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StatePattern.Main.GameService">
+    <Position X="1.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAzAAAAAAAAAAAACAAAICABAAAAAIQACAAUA=</HashCode>
+      <FileName>Assets\Scripts\Main\GameService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bgMusicSource" />
+      <Property Name="EventService" />
+      <Property Name="SoundService" />
+      <Property Name="UIService" />
+      <Property Name="LevelService" />
+      <Property Name="EnemyService" />
+      <Property Name="PlayerService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StatePattern.Events.EventService">
+    <Position X="5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Event\EventService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="OnLevelSelected" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StatePattern.Utilities.GenericMonoSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Utilities\GenericMonoSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.Events.EventController&lt;T&gt;">
+    <Position X="5" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAABAAAEAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Event\EventController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.Level.LevelService" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAQAAEAAIAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Level\LevelService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.Sound.SoundService" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAALAAAAAAAEAAAAAAgAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\Sound\SoundService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.UI.UIService" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAEBAAAEACARAgAEAAASQACAAEKAAAAABAEAAAAAEgA=</HashCode>
+      <FileName>Assets\Scripts\UI\UIService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.Enemy.EnemyService" Collapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAGAEAAAABgAAAAAASACAAAAAAggAACAAAACAAgA=</HashCode>
+      <FileName>Assets\Scripts\Enemy\EnemyService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatePattern.Player.PlayerService" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAEAQAAAAAACAAAAAABAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.AudioSource" Collapsed="true">
+    <Position X="1.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.AudioBehaviour" Collapsed="true">
+    <Position X="1.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
